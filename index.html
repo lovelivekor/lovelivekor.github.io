@@ -10,7 +10,9 @@
   <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css" rel="stylesheet">
   <style type="text/css">
+  	body { font-family: '나눔명조','Nanum Myeongjo', '맑은 고딕'; }
 	.wrap {  }
 	#duration { width:960px; height:600px; position:absolute; top:50%; left:50%; margin-top:-300px; margin-left:-480px; overflow:hidden; }
 	#nowtime { left:475px;top:5px;position:absolute; float: left; }
@@ -372,12 +374,13 @@
 	act32 = act32 + "</div>";
   
   var end = "<div class='script3'>";
-    end = end + "<div class='members3 jp'>ラブライブ！ School idol project</div>";
+    end = end + "<div class='members3 jp'>ラブライブ! School idol project</div>";
     end = end + "<div class='members3 ko'>러브라이브! School idol project</div>";
   end = end + "</div>";
   
   
   var act=1;
+  var ganju=0;
   
   $("#duration").html(act1).children('.script').fadeIn('slow');
     
@@ -638,6 +641,15 @@
   }
   
   if(time>1750 && time<1760) $("#duration").fadeOut('slow');
+  
+  if(time>=1760 && ganju==0) {
+    ganju=1;
+    $("#duration").html(end);
+    $("#duration").fadeIn('slow'); 
+    
+  }
+  
+  if(time>1890 && time<1900) $("#duration").fadeOut('slow');
   
   if(time>=1900 && act==30) {
     act=31; //act에서 1씩 빼줘야함
