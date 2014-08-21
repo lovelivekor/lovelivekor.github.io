@@ -683,7 +683,7 @@
                 vol -= 0.05;
                       audio.volume = vol.toFixed(2);
             } else {
-                audio.pause();
+                audio.load();
                 duration.innerHTML = '0:00 / ' + f_m + ':' + f_s; 
                 audio.currentTime = 0;
                 $('#btn').removeClass('fa-pause');
