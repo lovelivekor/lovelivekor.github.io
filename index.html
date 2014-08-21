@@ -13,6 +13,7 @@
   <link href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
   <style type="text/css">
   	body { font-family:'나눔고딕','Nanum Gothic','맑은 고딕', serif; }
+  	.preload { opacity:0; }
 	.wrap {  }
 	#duration { width:960px; height:600px; position:absolute; top:50%; left:50%; margin-top:-300px; margin-left:-480px; overflow:hidden; }
 	#nowtime { left:475px;top:5px;position:absolute; float: left; }
@@ -144,9 +145,19 @@
     actor_all_3 = actor_all_3 + "<div class='member0"+i+"_03'></div>";
   }
   
+  var actor_all_3_preload = '';
+    for (var i = 1; i <= 9; i++) {
+    actor_all_3 = actor_all_3 + "<div class='member0"+i+"_03 preload'></div>";
+  }
+  
   var actor_all_1 = '';
     for (var i = 1; i <= 9; i++) {
     actor_all_1 = actor_all_1 + "<div class='member0"+i+"_01'></div>";
+  }
+  
+  var actor_all_1_preload = '';
+    for (var i = 1; i <= 9; i++) {
+    actor_all_1 = actor_all_1 + "<div class='member0"+i+"_01 preload'></div>";
   }
     
     var act1 = "<div class='script'>";
@@ -154,6 +165,7 @@
     act1 = act1 + "<div class='member00 ko'>sing : Muz</div>";
     act1 = act1 + "<div class='member00 ko'>LoveLive EP13 삽입곡</div>";
     act1 = act1 + "<div class='member00 ko'><a href='javascript:playf();'>Play!</a></div>"; 
+    act1 = act1 + actor_all_3_preload + actor_all_1_preload;
   act1 = act1 + "</div>";
   
   var act2 = "<div class='script'>";
